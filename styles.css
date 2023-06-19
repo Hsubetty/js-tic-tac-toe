@@ -20,7 +20,7 @@ body{
 .cell{
   width: var(--cell-size);
   height: var(--cell-size);
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,14 +55,14 @@ body{
 
 .cell.x::before,
 .cell.x::after,
-.cell.circle::before{
+.cell.circle::before {
   background-color: black;
 }
 
 .board.x .cell:not(.x):not(.circle):hover::before,
 .board.x .cell:not(.x):not(.circle):hover::after,
-.board.circle .cell:not(.x):not(.circle):hover::before{
-  background-color: lightpink;
+.board.circle .cell:not(.x):not(.circle):hover::before {
+  background-color: pink;
 }
 
 .cell.x::before,
@@ -123,15 +123,15 @@ body{
 }
 .winning-message button{
   font-size: 3rem;
-  background-color: white;
+  background-color: pink;
   border: 1px solid black;
   padding: .25em .5em;
   cursor: pointer;
 }
 .winning-message button:hover{
   background-color: black;
-  color: white;
-  border-color: white;
+  color: pink;
+  border-color: pink;
 }
 
 .winning-message.show{
