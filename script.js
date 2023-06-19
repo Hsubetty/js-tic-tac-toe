@@ -18,17 +18,17 @@ const winningMessageTextElement = document.querySelector('[data-winning-massage-
 const restartButton = document.getElementById('restartButton')
 let circleTurn
 
-startGame() 
+startGame()
 
 restartButton.addEventListener('click', startGame)
 
 function startGame() {
   circleTurn = false
-  cellElements.forEach(cell => { 
+  cellElements.forEach(cell => {
     cell.classList.remove(X_CLASS)
     cell.classList.remove(CIRCLE_CLASS)
     cell.removeEventListener('click', handleClick)
-    cell.addEventListener('click', handleClick, { once:true })
+    cell.addEventListener('click', handleClick, { once: true })
   })
   setBoardHoverClass()
   winningMessageElement.classList.remove('show')
@@ -36,13 +36,13 @@ function startGame() {
 
 function handleClick(e) {
   const cell = e.target;
-  const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS 
+  const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS
   placeMark(cell, currentClass)
   if (checkWin(currentClass)) {
     endGame(false);
   } else if (isDraw()) {
     endGame(true)
-  } else { 
+  } else {
     switchTurns()
     setBoardHoverClass()
   }
@@ -51,14 +51,14 @@ function handleClick(e) {
 function endGame(draw) {
   if (draw) {
     winningMessageTextElement.innerText = 'Draw!'
-  } else { 
+  } else {
     winningMessageTextElement.innerText = `${circleTurn ? "O" : "X"} Wins :)`
   }
   winningMessageElement.classList.add('show')
 }
 
 function isDraw() {
-  return [...cellElements].every(cell => { 
+  return [...cellElements].every(cell => {
     return cell.classList.contains(X_CLASS) || cell.classList.contains(CIRCLE_CLASS)
   })
 }
@@ -76,14 +76,14 @@ function setBoardHoverClass() {
   board.classList.remove(CIRCLE_CLASS)
   if (circleTurn) {
     board.classList.add(CIRCLE_CLASS)
-  } else { 
+  } else {
     board.classList.add(X_CLASS)
   }
 }
 
 function checkWin(currentClass) {
-  return WINNING_COMBINATIONS.some(combination => { 
-    return combination.every(index => { 
+  return WINNING_COMBINATIONS.some(combination => {
+    return combination.every(index => {
       return cellElements[index].classList.contains(currentClass)
     })
   })
