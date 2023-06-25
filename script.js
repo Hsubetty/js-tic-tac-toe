@@ -50,9 +50,9 @@ function handleClick(e) {
 
 function endGame(draw) {
   if (draw) {
-    winningMessageTextElement.innerText = 'Draw!'
+    winningMessageTextElement.innerText = '這局平手!'
   } else {
-    winningMessageTextElement.innerText = `${circleTurn ? "O" : "X"} Wins :)`
+    winningMessageTextElement.innerText = `${circleTurn ? "O" : "X"} 贏了！ : )`
   }
   winningMessageElement.classList.add('show')
 }
