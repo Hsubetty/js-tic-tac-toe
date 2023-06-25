@@ -2,6 +2,7 @@
 *::after,
 *::before {
  box-sizing: border-box;
+ font-family: monospace;
 }
 :root {
  --cell-size: 100px;
@@ -116,16 +117,18 @@ body {
  right: 0;
  bottom: 0;
  background-color: rgba(125, 125, 125, 0.9);
- justify-content: center;
  align-items: center;
  color: white;
+ padding-top: 5px;
  font-size: 5rem;
  flex-direction: column;
 }
 .winning-message button {
  font-size: 3rem;
  background-color: pink;
- border: 1px solid black;
+ border: 2px solid white;
+ color: black;
+ border-radius: 25px;
  padding: 0.25em 0.5em;
  cursor: pointer;
 }
@@ -138,3 +141,24 @@ body {
 .winning-message.show {
  display: flex;
 }
+
+@media (max-width: 767px) {
+  .board {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+  }
+  .cell {
+    width: 33.33%; 
+    height: calc(33.33vw - 2px); 
+  }
+  .winning-message {
+    font-size: 3rem; 
+  }
+  .winning-message button {
+    font-size: 2rem; 
+  }
+}
+
+
+

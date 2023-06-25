@@ -52,7 +52,7 @@ function endGame(draw) {
   if (draw) {
     winningMessageTextElement.innerText = '這局平手!'
   } else {
-    winningMessageTextElement.innerText = `${circleTurn ? "O" : "X"} 贏了！ : )`
+    winningMessageTextElement.innerText = `${circleTurn ? "O" : "X"} 贏了！ :)`
   }
   winningMessageElement.classList.add('show')
 }
